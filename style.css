@@ -242,163 +242,133 @@ body {
 }
 
 /* ==========================================================================
-   ESTILOS RESPONSIVOS PARA CELULARES (Optimizado para Pantallas Móviles)
+   CORRECCIÓN RESPONSIVA RADICAL (MÓVIL TOTAL)
    ========================================================================== */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
 
-    /* 1. Ajuste del Encabezado (Navbar) y Visibilidad del Logo */
+    /* 1. Corrección Completa del Header y Logo */
     header {
+        display: flex !important;
         flex-direction: column !important;
-        /* Pone los elementos en orden vertical */
+        /* Coloca elementos uno abajo del otro */
+        align-items: center !important;
         padding: 15px 10px !important;
-        gap: 12px;
-        text-align: center;
+        gap: 12px !important;
+        background-color: #0b2240 !important;
+        /* Fondo azul oscuro idéntico a tu marca */
     }
 
-    /* Corrección directa para que el logotipo no desaparezca ni se rompa */
-    header .logo img,
-    header img {
+    /* Forzar que el logo se vea de tamaño adecuado */
+    #headerLogo {
+        display: block !important;
         width: 130px !important;
-        /* Tamaño ideal y visible en pantallas móviles */
+        /* Tamaño perfecto para celular */
         height: auto !important;
-        display: inline-block !important;
+        margin: 0 auto !important;
     }
 
     header nav ul {
+        display: flex !important;
         flex-direction: row !important;
-        /* Mantiene el menú en horizontal */
-        flex-wrap: wrap;
-        /* Si no caben, bajan de línea ordenadamente */
-        justify-content: center;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
         gap: 12px !important;
+        padding: 0 !important;
     }
 
     header nav ul li a {
-        font-size: 0.85rem;
-        /* Ajuste sutil para evitar desbordes */
+        font-size: 0.85rem !important;
+        /* Texto del menú más compacto */
     }
 
-    /* 2. Portada Principal (Hero Section) */
+    header .social-icons {
+        gap: 15px !important;
+    }
+
+    /* 2. Reducción de la sección principal (Hero) */
     .hero {
         flex-direction: column-reverse !important;
-        /* Texto abajo e imagen/termo arriba */
+        /* Texto abajo, imagen arriba */
         padding: 30px 15px !important;
-        text-align: center;
+        text-align: center !important;
         min-height: auto !important;
     }
 
-    .hero-content {
-        max-width: 100% !important;
-    }
-
-    /* Corrección drástica al título gigante de la captura */
-    .hero-content h1,
-    .hero h1 {
-        font-size: 1.75rem !important;
-        /* Tamaño controlado para que quepa perfectamente */
-        line-height: 1.2;
+    /* Reducción drástica del título gigante */
+    .hero h1,
+    .hero-content h1 {
+        font-size: 1.7rem !important;
+        /* Ya no se desbordará ni se verá inmenso */
+        line-height: 1.2 !important;
         margin-bottom: 10px !important;
     }
 
-    .hero-content p,
-    .hero p {
+    .hero p,
+    .hero-content p {
         font-size: 0.95rem !important;
-        margin-bottom: 15px !important;
+        max-width: 100% !important;
     }
 
-    /* Ajuste de las características del Hero */
+    /* Pequeños iconos debajo del título */
     .features,
     .hero-features {
         flex-direction: row !important;
-        /* Mantiene los iconos pequeños en línea */
-        justify-content: center;
-        flex-wrap: wrap;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
         gap: 10px !important;
-        margin-bottom: 20px !important;
-        font-size: 0.8rem !important;
-    }
-
-    .hero-image {
-        margin-bottom: 20px;
-        width: 100%;
-        max-width: 260px;
-        /* Evita que la imagen del producto se deforme en vertical */
-        margin: 0 auto 20px auto;
-    }
-
-    /* 3. Barra de Beneficios (Reorganizada para optimizar espacio) */
-    .benefits-bar {
-        padding: 15px 10px !important;
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        /* Los distribuye en cuadrícula de 2x2 */
-        gap: 12px !important;
-        max-width: 100% !important;
-        margin: 0 auto;
-    }
-
-    .benefit-item,
-    .benefits-bar div {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        text-align: center !important;
         font-size: 0.75rem !important;
-        /* Texto compacto e idéntico para dispositivos móviles */
+        /* Tamaño controlado para los textos pequeños */
+        margin: 15px 0 !important;
     }
 
-    .benefit-item img,
-    .benefits-bar img {
-        width: 24px !important;
-        /* Control del tamaño de los iconos de envío, entrega, etc. */
-        height: auto !important;
-        margin-bottom: 5px;
-    }
-
-    /* 4. Títulos de las Secciones */
-    .categories-section,
-    .about-section,
-    .contact-section {
-        padding: 35px 15px !important;
-    }
-
-    .categories-section h2,
-    .about-section h2,
-    .contact-section h2 {
-        font-size: 1.45rem !important;
-    }
-
-    /* 5. Cuadrícula de Categorías (Los catálogos en PDF) */
-    .categories-grid {
-        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)) !important;
-        /* Caben ordenadamente de 2 en 2 */
-        gap: 12px !important;
-    }
-
-    .category-card {
-        padding: 15px 10px !important;
-    }
-
-    .category-icon-placeholder {
-        width: 50px !important;
-        height: 50px !important;
-        font-size: 1.3rem !important;
-    }
-
-    /* 6. Sección de Nosotros */
-    .about-text {
-        font-size: 0.95rem !important;
-        text-align: justify;
-    }
-
-    /* 7. Formulario de Contacto */
-    .contact-container {
-        padding: 20px 15px !important;
-        width: 100% !important;
-    }
-
-    .form-group input,
-    .form-group textarea {
+    /* Botón de WhatsApp */
+    .btn-whatsapp {
+        padding: 10px 20px !important;
         font-size: 0.9rem !important;
+        margin: 0 auto !important;
+        display: inline-flex !important;
+    }
+
+    /* Espacio para Imagen de Productos */
+    .hero-image {
+        width: 100% !important;
+        max-width: 280px !important;
+        margin: 0 auto 20px auto !important;
+        height: auto !important;
+    }
+
+    /* 3. Reducción de la Barra de Beneficios Inferior */
+    .benefits-bar {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        /* Crea una cuadrícula limpia de 2x2 */
+        gap: 12px !important;
+        padding: 15px 10px !important;
+        background: #ffffff !important;
+    }
+
+    .benefit-item {
+        flex-direction: column !important;
+        /* Icono arriba, texto abajo */
+        text-align: center !important;
+        gap: 6px !important;
+    }
+
+    .benefit-item i,
+    .benefit-item img {
+        font-size: 1.2rem !important;
+        /* Controla el tamaño de los iconos */
+    }
+
+    .benefit-item h3 {
+        font-size: 0.8rem !important;
+        /* Texto de beneficio pequeño y legible */
+        margin: 0 !important;
+    }
+
+    .benefit-item p {
+        font-size: 0.7rem !important;
+        /* Descripción pequeña */
+        display: block !important;
     }
 }
