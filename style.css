@@ -242,38 +242,47 @@ body {
 }
 
 /* ==========================================================================
-   ESTILOS RESPONSIVOS PARA CELULARES (Pantallas menores a 768px)
+   ESTILOS RESPONSIVOS PARA CELULARES (Optimizado para Pantallas Móviles)
    ========================================================================== */
 @media (max-width: 768px) {
 
-    /* 1. Ajuste del Encabezado (Navbar) */
+    /* 1. Ajuste del Encabezado (Navbar) y Visibilidad del Logo */
     header {
         flex-direction: column !important;
-        /* Pone el logo arriba, el menú en medio y las redes abajo */
-        padding: 15px 20px !important;
-        gap: 15px;
+        /* Pone los elementos en orden vertical */
+        padding: 15px 10px !important;
+        gap: 12px;
         text-align: center;
+    }
+
+    /* Corrección directa para que el logotipo no desaparezca ni se rompa */
+    header .logo img,
+    header img {
+        width: 130px !important;
+        /* Tamaño ideal y visible en pantallas móviles */
+        height: auto !important;
+        display: inline-block !important;
     }
 
     header nav ul {
         flex-direction: row !important;
-        /* Mantiene el menú horizontal */
+        /* Mantiene el menú en horizontal */
         flex-wrap: wrap;
-        /* Si no caben en una línea, bajan automáticamente */
+        /* Si no caben, bajan de línea ordenadamente */
         justify-content: center;
-        gap: 15px !important;
+        gap: 12px !important;
     }
 
     header nav ul li a {
-        font-size: 0.9rem;
-        /* Letra un poco más pequeña para que quepa bien */
+        font-size: 0.85rem;
+        /* Ajuste sutil para evitar desbordes */
     }
 
     /* 2. Portada Principal (Hero Section) */
     .hero {
         flex-direction: column-reverse !important;
-        /* Pone el texto abajo y el espacio de la imagen arriba */
-        padding: 40px 20px !important;
+        /* Texto abajo e imagen/termo arriba */
+        padding: 30px 15px !important;
         text-align: center;
         min-height: auto !important;
     }
@@ -282,60 +291,87 @@ body {
         max-width: 100% !important;
     }
 
-    .hero-content h1 {
-        font-size: 2.2rem !important;
-        /* Reduce el título gigante para que no se corte */
-        line-height: 1.3;
+    /* Corrección drástica al título gigante de la captura */
+    .hero-content h1,
+    .hero h1 {
+        font-size: 1.75rem !important;
+        /* Tamaño controlado para que quepa perfectamente */
+        line-height: 1.2;
+        margin-bottom: 10px !important;
     }
 
-    .hero-content p {
-        font-size: 1.1rem !important;
-        margin-bottom: 20px !important;
+    .hero-content p,
+    .hero p {
+        font-size: 0.95rem !important;
+        margin-bottom: 15px !important;
     }
 
-    .features {
-        flex-direction: column !important;
-        /* Los beneficios de la portada se ponen uno abajo del otro */
-        align-items: center;
+    /* Ajuste de las características del Hero */
+    .features,
+    .hero-features {
+        flex-direction: row !important;
+        /* Mantiene los iconos pequeños en línea */
+        justify-content: center;
+        flex-wrap: wrap;
         gap: 10px !important;
-        margin-bottom: 30px !important;
+        margin-bottom: 20px !important;
+        font-size: 0.8rem !important;
     }
 
     .hero-image {
-        margin-bottom: 30px;
+        margin-bottom: 20px;
         width: 100%;
+        max-width: 260px;
+        /* Evita que la imagen del producto se deforme en vertical */
+        margin: 0 auto 20px auto;
     }
 
-    /* 3. Barra de Beneficios (Debajo de la portada) */
+    /* 3. Barra de Beneficios (Reorganizada para optimizar espacio) */
     .benefits-bar {
-        padding: 20px !important;
-        flex-direction: column !important;
-        /* Se alinean verticalmente */
-        align-items: flex-start !important;
-        /* Alinea los iconos a la izquierda */
-        max-width: 290px;
+        padding: 15px 10px !important;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        /* Los distribuye en cuadrícula de 2x2 */
+        gap: 12px !important;
+        max-width: 100% !important;
         margin: 0 auto;
-        gap: 20px !important;
+    }
+
+    .benefit-item,
+    .benefits-bar div {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        font-size: 0.75rem !important;
+        /* Texto compacto e idéntico para dispositivos móviles */
+    }
+
+    .benefit-item img,
+    .benefits-bar img {
+        width: 24px !important;
+        /* Control del tamaño de los iconos de envío, entrega, etc. */
+        height: auto !important;
+        margin-bottom: 5px;
     }
 
     /* 4. Títulos de las Secciones */
     .categories-section,
     .about-section,
     .contact-section {
-        padding: 40px 20px !important;
-        /* Menos espacio blanco a los lados en celular */
+        padding: 35px 15px !important;
     }
 
     .categories-section h2,
     .about-section h2,
     .contact-section h2 {
-        font-size: 1.6rem !important;
+        font-size: 1.45rem !important;
     }
 
     /* 5. Cuadrícula de Categorías (Los catálogos en PDF) */
     .categories-grid {
         grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)) !important;
-        /* Hace las tarjetas más compactas para que quepan de 2 en 2 en vertical */
+        /* Caben ordenadamente de 2 en 2 */
         gap: 12px !important;
     }
 
@@ -344,28 +380,25 @@ body {
     }
 
     .category-icon-placeholder {
-        width: 55px !important;
-        height: 55px !important;
-        font-size: 1.4rem !important;
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 1.3rem !important;
     }
 
     /* 6. Sección de Nosotros */
     .about-text {
-        font-size: 1rem !important;
+        font-size: 0.95rem !important;
         text-align: justify;
-        /* Hace que el texto largo sea más fácil de leer en pantallas angostas */
     }
 
     /* 7. Formulario de Contacto */
     .contact-container {
-        padding: 20px !important;
-        /* Reduce el espaciado interno de la caja blanca */
+        padding: 20px 15px !important;
         width: 100% !important;
     }
 
     .form-group input,
     .form-group textarea {
-        font-size: 0.95rem !important;
-        /* Ajusta el tamaño de la letra dentro de las cajas de texto */
+        font-size: 0.9rem !important;
     }
 }
