@@ -1,0 +1,242 @@
+/* Importar tipografía moderna y limpia */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght=300;400;700;900&display=swap');
+
+:root {
+    --azul-dominante: #0B1F3B;
+    --amarillo-acento: #FFC72C;
+    --azul-hover: #1E3A60;
+    --neutro-claro: #F4F7FA;
+    --texto-oscuro: #4A5568;
+    --blanco-puro: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+    /* Desplazamiento suave al hacer clic en el menú */
+}
+
+body {
+    background-color: var(--neutro-claro);
+    color: var(--texto-oscuro);
+}
+
+.btn-amarillo {
+    background-color: var(--amarillo-acento);
+    color: var(--azul-dominante);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-amarillo:hover {
+    transform: scale(1.05);
+    background-color: #e5b223;
+}
+
+/* --- BARRA DE BENEFICIOS --- */
+.benefits-bar {
+    background-color: var(--blanco-puro);
+    padding: 30px 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.benefit-item i {
+    font-size: 2rem;
+    color: var(--azul-dominante);
+}
+
+.benefit-text h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--azul-dominante);
+}
+
+.benefit-text p {
+    font-size: 0.85rem;
+    color: var(--texto-oscuro);
+}
+
+/* --- SECCIÓN CATEGORÍAS --- */
+.categories-section {
+    padding: 60px 50px;
+    text-align: center;
+}
+
+.categories-section h2,
+.about-section h2,
+.contact-section h2 {
+    font-size: 2rem;
+    color: var(--azul-dominante);
+    margin-bottom: 40px;
+    position: relative;
+    font-weight: 700;
+    text-align: center;
+}
+
+.categories-section h2::after,
+.about-section h2::after,
+.contact-section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--amarillo-acento);
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.category-card {
+    background-color: var(--blanco-puro);
+    padding: 25px 15px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: var(--azul-dominante);
+    font-weight: 700;
+    font-size: 0.9rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(11, 31, 59, 0.1);
+}
+
+.category-icon-placeholder {
+    width: 70px;
+    height: 70px;
+    background-color: var(--neutro-claro);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: var(--azul-dominante);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.category-icon-placeholder i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+}
+
+.category-card:hover .category-icon-placeholder {
+    background-color: var(--azul-dominante);
+    color: var(--amarillo-acento);
+}
+
+/* --- SECCIÓN NOSOTROS --- */
+.about-section {
+    background-color: var(--blanco-puro);
+    padding: 80px 50px;
+}
+
+.about-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--texto-oscuro);
+}
+
+.about-text p {
+    margin-bottom: 20px;
+}
+
+/* --- SECCIÓN CONTACTO Y FORMULARIO --- */
+.contact-section {
+    padding: 80px 50px;
+    background-color: var(--neutro-claro);
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--blanco-puro);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(11, 31, 59, 0.05);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 700;
+    color: var(--azul-dominante);
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 12px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--azul-dominante);
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--azul-dominante);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--azul-dominante);
+    color: var(--blanco-puro);
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-submit:hover {
+    background-color: var(--azul-hover);
+}
