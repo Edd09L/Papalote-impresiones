@@ -241,66 +241,131 @@ body {
     background-color: var(--azul-hover);
 }
 
-// celulares
-/* --- ESTILOS EXCLUSIVOS PARA CELULARES (Pantallas menores a 768px) --- */
+/* ==========================================================================
+   ESTILOS RESPONSIVOS PARA CELULARES (Pantallas menores a 768px)
+   ========================================================================== */
 @media (max-width: 768px) {
 
-    /* 1. Barra de navegación (Header) */
+    /* 1. Ajuste del Encabezado (Navbar) */
     header {
-        flex-direction: column;
-        /* Pone el logo, el menú y las redes en fila vertical */
-        padding: 15px 10px !important;
+        flex-direction: column !important;
+        /* Pone el logo arriba, el menú en medio y las redes abajo */
+        padding: 15px 20px !important;
         gap: 15px;
+        text-align: center;
     }
 
     header nav ul {
-        flex-direction: row;
-        /* Mantiene el menú horizontal o puedes cambiarlo a column si son muchos */
+        flex-direction: row !important;
+        /* Mantiene el menú horizontal */
         flex-wrap: wrap;
-        /* Si no caben, bajan de línea solos */
+        /* Si no caben en una línea, bajan automáticamente */
         justify-content: center;
-        gap: 15px;
+        gap: 15px !important;
+    }
+
+    header nav ul li a {
         font-size: 0.9rem;
+        /* Letra un poco más pequeña para que quepa bien */
     }
 
-    /* 2. Sección Hero (La portada principal) */
-    .hero-container {
-        flex-direction: column-reverse;
-        /* Pone el texto abajo y la imagen/termo arriba */
+    /* 2. Portada Principal (Hero Section) */
+    .hero {
+        flex-direction: column-reverse !important;
+        /* Pone el texto abajo y el espacio de la imagen arriba */
+        padding: 40px 20px !important;
         text-align: center;
-        padding: 20px;
+        min-height: auto !important;
     }
 
-    .hero-text h1 {
-        font-size: 2rem;
-        /* Reduce el tamaño del título para que quepa en el celular */
+    .hero-content {
+        max-width: 100% !important;
     }
 
-    /* 3. Contenedores de Categorías y Productos */
-    .categorias-grid,
-    .productos-slider,
-    .contact-container {
-        display: flex;
-        flex-direction: column;
-        /* Transforma las cuadrículas en una sola columna vertical */
+    .hero-content h1 {
+        font-size: 2.2rem !important;
+        /* Reduce el título gigante para que no se corte */
+        line-height: 1.3;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem !important;
+        margin-bottom: 20px !important;
+    }
+
+    .features {
+        flex-direction: column !important;
+        /* Los beneficios de la portada se ponen uno abajo del otro */
         align-items: center;
-        gap: 20px;
-        padding: 10px;
+        gap: 10px !important;
+        margin-bottom: 30px !important;
     }
 
-    /* 4. Tarjetas individuales */
-    .categoria-card,
-    .producto-card {
-        width: 100% !important;
-        /* Obliga a las tarjetas a usar el ancho disponible del celular */
-        max-width: 320px;
-        /* Evita que se estiren de más */
+    .hero-image {
+        margin-bottom: 30px;
+        width: 100%;
+    }
+
+    /* 3. Barra de Beneficios (Debajo de la portada) */
+    .benefits-bar {
+        padding: 20px !important;
+        flex-direction: column !important;
+        /* Se alinean verticalmente */
+        align-items: flex-start !important;
+        /* Alinea los iconos a la izquierda */
+        max-width: 290px;
         margin: 0 auto;
+        gap: 20px !important;
     }
 
-    /* 5. Formulario de contacto */
-    form {
+    /* 4. Títulos de las Secciones */
+    .categories-section,
+    .about-section,
+    .contact-section {
+        padding: 40px 20px !important;
+        /* Menos espacio blanco a los lados en celular */
+    }
+
+    .categories-section h2,
+    .about-section h2,
+    .contact-section h2 {
+        font-size: 1.6rem !important;
+    }
+
+    /* 5. Cuadrícula de Categorías (Los catálogos en PDF) */
+    .categories-grid {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)) !important;
+        /* Hace las tarjetas más compactas para que quepan de 2 en 2 en vertical */
+        gap: 12px !important;
+    }
+
+    .category-card {
+        padding: 15px 10px !important;
+    }
+
+    .category-icon-placeholder {
+        width: 55px !important;
+        height: 55px !important;
+        font-size: 1.4rem !important;
+    }
+
+    /* 6. Sección de Nosotros */
+    .about-text {
+        font-size: 1rem !important;
+        text-align: justify;
+        /* Hace que el texto largo sea más fácil de leer en pantallas angostas */
+    }
+
+    /* 7. Formulario de Contacto */
+    .contact-container {
+        padding: 20px !important;
+        /* Reduce el espaciado interno de la caja blanca */
         width: 100% !important;
-        padding: 15px !important;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 0.95rem !important;
+        /* Ajusta el tamaño de la letra dentro de las cajas de texto */
     }
 }
