@@ -240,3 +240,67 @@ body {
 .btn-submit:hover {
     background-color: var(--azul-hover);
 }
+
+// celulares
+/* --- ESTILOS EXCLUSIVOS PARA CELULARES (Pantallas menores a 768px) --- */
+@media (max-width: 768px) {
+
+    /* 1. Barra de navegación (Header) */
+    header {
+        flex-direction: column;
+        /* Pone el logo, el menú y las redes en fila vertical */
+        padding: 15px 10px !important;
+        gap: 15px;
+    }
+
+    header nav ul {
+        flex-direction: row;
+        /* Mantiene el menú horizontal o puedes cambiarlo a column si son muchos */
+        flex-wrap: wrap;
+        /* Si no caben, bajan de línea solos */
+        justify-content: center;
+        gap: 15px;
+        font-size: 0.9rem;
+    }
+
+    /* 2. Sección Hero (La portada principal) */
+    .hero-container {
+        flex-direction: column-reverse;
+        /* Pone el texto abajo y la imagen/termo arriba */
+        text-align: center;
+        padding: 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+        /* Reduce el tamaño del título para que quepa en el celular */
+    }
+
+    /* 3. Contenedores de Categorías y Productos */
+    .categorias-grid,
+    .productos-slider,
+    .contact-container {
+        display: flex;
+        flex-direction: column;
+        /* Transforma las cuadrículas en una sola columna vertical */
+        align-items: center;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    /* 4. Tarjetas individuales */
+    .categoria-card,
+    .producto-card {
+        width: 100% !important;
+        /* Obliga a las tarjetas a usar el ancho disponible del celular */
+        max-width: 320px;
+        /* Evita que se estiren de más */
+        margin: 0 auto;
+    }
+
+    /* 5. Formulario de contacto */
+    form {
+        width: 100% !important;
+        padding: 15px !important;
+    }
+}
